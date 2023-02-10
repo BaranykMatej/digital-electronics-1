@@ -59,6 +59,6 @@ end architecture dataflow;
 
 Screenshot containing the verification of the First Distributive law:
 
-	![figure](images/graph2.png)
+	![figure](https://github.com/BaranykMatej/digital-electronics-1/blob/main/01-gates/images/graph2.png)
 	
 	
