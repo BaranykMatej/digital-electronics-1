@@ -55,6 +55,6 @@ begin
 end architecture dataflow;
 ```
 
-#### Verifying at least one of the distributive laws:
+#### Verifying at least one of the distributive laws - screenshot proof:
 
-	![your figure](images/graph2.png)
+	![figure](images/graph2.png)
