@@ -57,4 +57,5 @@ end architecture dataflow;
 
 Screenshot containing the verification of the First Distributive law:
 
-	![figure](images/graph2.png)
+	![graph2.png](images/graph2.png)
+	
