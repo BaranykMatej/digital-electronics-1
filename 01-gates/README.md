@@ -48,10 +48,8 @@ end architecture dataflow;
 ```vhdl
 architecture dataflow of gates is
 begin
-    f_orig_o <= (not(b_i) and a_i) or
-                (c_i and not(b_i or not(a_i)));
-    f_nand_o <= b_i nand a_i; -- MODIFY THIS FUNCTION
-    f_nor_o  <= b_i nor a_i;  -- MODIFY THIS FUNCTION
+    f_fdl_left_o <= (a_i and b_i) or (a_i and c_i);
+    f_fdl_right_o <= (a_i and (b_i or c_i));
 end architecture dataflow;
 ```
 
@@ -59,6 +57,4 @@ end architecture dataflow;
 
 Screenshot containing the verification of the First Distributive law:
 
-	![figure](https://github.com/BaranykMatej/digital-electronics-1/blob/main/01-gates/images/graph2.png)
-	
-	
+	![figure](images/graph2.png)
