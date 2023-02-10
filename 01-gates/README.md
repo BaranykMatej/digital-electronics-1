@@ -58,3 +58,4 @@ end architecture dataflow;
 #### Verifying at least one of the distributive laws - screenshot proof:
 
 	![figure](images/graph2.png)
+	
