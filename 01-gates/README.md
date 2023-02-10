@@ -43,8 +43,8 @@ end architecture dataflow;
 ### Experiments on your own
 
 
-#### Code
-Code to verify the First Distributive law:
+#### Code to verify the First Distributive law:
+
 ```vhdl
 architecture dataflow of gates is
 begin
@@ -55,9 +55,10 @@ begin
 end architecture dataflow;
 ```
 
-#### Verifying at least one of the distributive laws - screenshot proof:
+#### Verifying at least one of the distributive laws via EDA playground
 
 Screenshot containing the verification of the First Distributive law:
 
-	![figure](images/graph2.png);
+	![figure](images/graph2.png)
+	
 	
