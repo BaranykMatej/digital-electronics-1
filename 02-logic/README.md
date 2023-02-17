@@ -33,7 +33,7 @@
         s_a <= "1000"; -- Such as "0011" if ID = xxxx53
         wait for 100 ns;
         -- Expected output
-        assert ((s_B_greater_A = '0' ) and
+        assert ((s_B_greater_A = '1' ) and
                 (s_B_equals_A  = '0' ) and
                 (s_B_less_A    = '0' ))
         -- If false, then report an error
