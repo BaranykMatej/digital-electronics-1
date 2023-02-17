@@ -26,28 +26,28 @@
     p_stimulus : process
     begin
         -- Report a note at the beginning of stimulus process
-        report "Stimulus process started" severity note;
+        report "Stimulus process started";
 
         -- First test case
-        s_b <= 0101; 		-- Such as "0101" if ID = xxxx53
-        s_a <= 0011;        -- Such as "0011" if ID = xxxx53
+        s_b <= "1001"; -- Such as "0101" if ID = xxxx53
+        s_a <= "1000"; -- Such as "0011" if ID = xxxx53
         wait for 100 ns;
         -- Expected output
-        assert ((s_B_greater_A = 'WRITE_CORRECT_VALUE_HERE') and
-                (s_B_equals_A  = 'WRITE_CORRECT_VALUE_HERE') and
-                (s_B_less_A    = 'WRITE_CORRECT_VALUE_HERE'))
+        assert ((s_B_greater_A = '0' ) and
+                (s_B_equals_A  = '0' ) and
+                (s_B_less_A    = '0' ))
         -- If false, then report an error
-        report "Input combination COMPLETE_THIS_TEXT FAILED" severity error;
+        report "Input combination you entered FAILED" severity error;
 
         -- Report a note at the end of stimulus process
-        report "Stimulus process finished" severity note;
+        report "Stimulus process finished";
         wait;
     end process p_stimulus;
 ```
 
 2. Link to your public EDA Playground example:
 
-   [https://www.edaplayground.com/...](https://www.edaplayground.com/...)
+   [https://edaplayground.com/x/TPZ4](https://edaplayground.com/x/TPZ4)
    
    
    
