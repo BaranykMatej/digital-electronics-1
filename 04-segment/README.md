@@ -48,8 +48,9 @@
 
    ![your figure](images/sigled.png)
    
-   
    Additional: EDA playground link: https://www.edaplayground.com/x/ckB2
+   
+   
    --------------------------------
    
    Lab. prep:
