@@ -11,23 +11,28 @@
     -- n-bit up/down counter.
     --------------------------------------------------------
     p_cnt_up_down : process (clk) is
-    begin
-      if rising_edge(clk) then
-        if (rst = '1') then           -- Synchronous reset
-          sig_cnt <= (others => '0'); -- Clear all bits
-        elsif (en = '1') then         -- Test if counter is enabled
+  begin
 
-          -- TEST COUNTER DIRECTION HERE
+    if rising_edge(clk) then
+      if (rst = '1') then           -- Synchronous reset
+        sig_cnt <= (others => '0'); -- Clear all bits
+      elsif (en = '1') then         -- Test if counter is enabled
 
+        -- TEST COUNTER DIRECTION HERE
+           if (cnt_up = '1') then
             sig_cnt <= sig_cnt + 1;
-        end if;
+          else
+            sig_cnt <= sig_cnt -1;
+          end if;
       end if;
-    end process p_cnt_up_down;
+    end if;
+
+  end process p_cnt_up_down;
 ```
 
 2. Screenshot with simulated time waveforms. Test: (a) reset, (b) counter direction, (c) enable. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
 
-   ![your figure]()
+   ![your figure](images/simulation.png)
 
 ### Two counters
 
@@ -39,15 +44,6 @@
    
 ## Pre-lab preparation
 2. Calculate how many periods of clock signal with frequency of 100&nbsp;MHz contain time intervals 2&nbsp;ms, 4&nbsp;ms, 10&nbsp;ms, 250&nbsp;ms, 500&nbsp;ms, and 1&nbsp;s. Write values in decimal, binary, and hexadecimal forms.
-
-   &nbsp;
-   ![calculation](images/calculation.png)
-   &nbsp;
-   <!--
-   https://editor.codecogs.com/
-   T_{clk}=\frac{1}{f_{clk}}=
-   \textup{number of clk period} = \frac{\textup{time interval}}{T_{clk}}=
-   -->
 
    | **Time interval** | **Number of clk periods** | **Number of clk periods in hex** | **Number of clk periods in binary** |
    | :-: | :-: | :-: | :-: |
