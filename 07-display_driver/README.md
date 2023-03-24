@@ -54,11 +54,12 @@
 ### Eight-digit driver
 
 1. Image of the 8-digit driver's block schematic. The image can be drawn on a computer or by hand. Always name all inputs, outputs, components, and internal signals!
+
 Screencap from vivado of simplified schematic:
-   ![your figure](images/8driver1.png)
+![your figure](images/8driver1.png)
    
 Screencap from vivado 2:
-   ![your figure](images/8driver2.png)
+![your figure](images/8driver2.png)
 
-### Redrawn schematic from Vivado according to assignment 
-   ![your figure](images/8driver3.png)
+### Redrawn schematic from Vivado according to assignment:
+![your figure](images/8driver3.png)
