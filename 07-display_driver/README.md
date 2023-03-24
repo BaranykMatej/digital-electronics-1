@@ -60,5 +60,5 @@ Screencap from vivado of simplified schematic:
 Screencap from vivado 2:
    ![your figure](images/8driver2.png)
 
-###Redrawn schematic from Vivado according to assignment 
+### Redrawn schematic from Vivado according to assignment 
    ![your figure](images/8driver3.png)
