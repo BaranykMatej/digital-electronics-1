@@ -6,13 +6,21 @@ library ieee;
 entity top is
   port (
     CLK100MHZ               : in  std_logic;      
-    SW                      : in  std_logic;   
+    SW                      : in  std_logic;  
     BTNC                    : in  std_logic;  
     sig_timer_12bit_O       : out std_logic_vector(11 downto 0); 
     sig_rounds_6bit_O       : out std_logic_vector(5 downto 0);   
+    hex                     : in std_logic_vector(3 downto 0);   
     sig_pause_12bit_O       : out std_logic_vector(11 downto 0);
-    sig_clk_1ns_O           : out std_logic
-  );
+    sig_clk_1ns_O           : out std_logic;
+    CA                      : out STD_LOGIC; 
+    CB                      : out STD_LOGIC;
+    CC                      : out std_logic;
+    CD                      : out STD_LOGIC;
+    CE                      : out STD_LOGIC;
+    CF                      : out STD_LOGIC;
+    CG                      : out std_logic
+    );
 end entity top;
 
 -- Architecture body for top level
@@ -36,6 +44,19 @@ type t_state is (
   
 begin
 
+    hex2seg : entity work.hex_7seg
+        port map (
+            blank  => BTNC,
+            hex    => hex,
+            seg(6) => CA,
+            seg(5) => CB,
+            seg(4) => CC,
+            seg(3) => CD,
+            seg(2) => CE,
+            seg(1) => CF,
+            seg(0) => CG
+          );
+           
   -- Instance of clock_enable entity
   clk_en1 : entity work.clock_enable
     generic map (
