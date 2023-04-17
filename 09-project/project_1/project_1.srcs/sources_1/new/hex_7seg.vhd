@@ -1,4 +1,3 @@
-
 library ieee;
   use ieee.std_logic_1164.all;
 
@@ -9,7 +8,7 @@ library ieee;
 entity hex_7seg is
   port (
     blank : in    std_logic;                    --! Display is clear if blank = 1
-    hex   : in    std_logic_vector(11 downto 0); --! Binary representation of one hexadecimal symbol
+    hex   : in    std_logic_vector(3 downto 0); --! Binary representation of one hexadecimal symbol
     seg   : out   std_logic_vector(6 downto 0)  --! Seven active-low segments in the order: a, b, ..., g
   );
 end entity hex_7seg;
@@ -21,23 +20,6 @@ end entity hex_7seg;
 architecture behavioral of hex_7seg is
 
 begin
-
-  --------------------------------------------------------
-  -- p_7seg_decoder:
-  -- A combinational process for 7-segment display (Common
-  -- Anode) decoder. Any time "hex" or "blank" is changed,
-  -- the process is "executed". Output pin seg(6) controls
-  -- segment A, seg(5) segment B, etc.
-  --     segment A
-  --      | segment B
-  --      |  | segment C
-  --      +-+|  |   ...   segment G
-  --        ||+-+          |
-  --        |||            |
-  -- seg = "0000001"-------+
-  --
-  -- Display is clear/blank if signal blank = 1.
-  --------------------------------------------------------
 
   p_7seg_decoder : process (blank, hex) is
 
@@ -78,6 +60,9 @@ begin
 
         when "1001" =>
           seg <= "0000100"; -- 9
+          
+         when others =>
+          seg <= "0000000";
 
       end case;
 
