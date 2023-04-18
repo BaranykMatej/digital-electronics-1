@@ -169,28 +169,28 @@ p_drive_7seg : process (CLK100MHZ)
       iterator := iterator + 1;
         case iterator is
               -- display seconds
-              when 1 =>
+              when 10000 =>
                 an  <= "11111110";
                 sig_hex <= sig_digit_seconds_ones;
-              when 2 =>
+              when 20000 =>
                 an  <= "11111101";
                 sig_hex <= sig_digit_seconds_tens;
               -- display minutes
-              when 3 =>
+              when 30000 =>
                 an  <= "11111011";
                 sig_hex <= sig_digit_minutes_ones;
-              when 4 =>
+              when 40000 =>
                 an  <= "11110111";
                 sig_hex <= sig_digit_minutes_tens;
               -- keep 5th display blank
-              when 5 =>
+              when 50000 =>
                 an  <= "11111111";
                 sig_hex <= "1111";
               -- display rounds
-              when 6 =>
+              when 60000 =>
                 an  <= "10111111";
                 sig_hex <= sig_digit_round_ones;
-              when 7 =>
+              when 70000 =>
                 an  <= "01111111";
                 sig_hex <= sig_digit_round_tens;
                 iterator := 0;
