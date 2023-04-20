@@ -19,9 +19,9 @@ entity top is
     -- reset button
     BTNC        : in std_logic;
     -- switches used to set the counter
-    SW          : in std_logic_vector(15 downto 0);
+    SW          : in std_logic_vector(15 downto 0)
     -- debug timer output
-    debug_timer : out std_logic_vector(11 downto 0) := (others => '0')
+    --debug_timer : out std_logic_vector(11 downto 0) := (others => '0')
   );
 end entity top;
 
@@ -53,7 +53,7 @@ begin
   counter : entity work.counter
     port map (
       clk => CLK100MHZ,    
-      rst => sig_res,
+      rst => BTNC,
       en  => '1',
       -- inputs
       timer_limit_12bit => std_logic_vector(sig_timer_limit_from_switches),
@@ -84,7 +84,7 @@ begin
 
 -- ASYNC!
 -- converts switches to limits
-p_counter_sw_to_lim : process (SW (15 downto 0))
+p_counter_sw_to_lim : process (CLK100MHZ)
 begin
 
 -- round limit
@@ -112,16 +112,14 @@ else
   sig_pause_limit_from_switches <= to_unsigned(to_integer(unsigned(SW (15 downto 9))) * 60, 12);
 end if;
 
--- settings modified, reset the counter
 sig_res <= '1';
-
 end process p_counter_sw_to_lim;
 
 -- used to reset counter when BTNC is pressed and unreset
 p_counter_reset : process (CLK100MHZ)
 begin
 
-debug_timer <= sig_timer_12bit;
+--debug_timer <= sig_timer_12bit;
 
 if (sig_res <= '1' and BTNC = '0') then
   sig_res <= '0';

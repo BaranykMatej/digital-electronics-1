@@ -35,7 +35,7 @@ architecture testbench of tb_top is
     -- switches used to set the counter
     signal SW         : std_logic_vector(15 downto 0) := "1111110011110011";
     -- debug timer
-    signal debug_timer : std_logic_vector(11 downto 0) := (others => '0');
+    --signal debug_timer : std_logic_vector(11 downto 0) := (others => '0');
   
 begin
 
@@ -54,8 +54,8 @@ begin
       CF => CF,
       CG => CG,
       AN => AN,
-      SW => SW,
-      debug_timer => debug_timer
+      SW => SW
+  --    debug_timer => debug_timer
     );
 
   --------------------------------------------------------
