@@ -16,10 +16,6 @@ entity counter is
     pause_12bit             : out std_logic_vector(11 downto 0);
     round_4bit              : out std_logic_vector(3 downto 0)   
 
-
-
-
-
   );
 end entity counter;
 
@@ -93,7 +89,7 @@ cnt_pause : entity work.cnt_up_down
     cnt    => sig_pause_12bit    
   );
   
-p_coumter_cycle : process (sig_clk) is
+p_counter_cycle : process (sig_clk) is
 begin
   if (rising_edge(sig_clk)) then
   -- reset whole entity
@@ -102,8 +98,8 @@ begin
       sig_timer_rst         <= '1';
       sig_pause_rst         <= '1';
       sig_round_4bit        <= (others => '0');
-      sig_timer_en          <= '1';
-      sig_pause_en          <= '1';
+      sig_timer_en          <= '0';
+      sig_pause_en          <= '0';
     else
       -- if rst not set, keep counting
       -- in case timer or pause needs to be reset to put them back in action
@@ -148,6 +144,6 @@ begin
   
   end if; -- rising edge
   
-end process p_coumter_cycle;
+end process p_counter_cycle;
 
 end architecture Behavioral;

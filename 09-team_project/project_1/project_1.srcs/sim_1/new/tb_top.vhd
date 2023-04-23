@@ -33,7 +33,7 @@ architecture testbench of tb_top is
     -- reset button
     signal BTNC       : std_logic  := '0';
     -- switches used to set the counter
-    signal SW         : std_logic_vector(15 downto 0) := "1111110011110011";
+    signal SW         : std_logic_vector(15 downto 0) := "0000010000010011";
     -- debug timer
     signal debug_timer : std_logic_vector(11 downto 0) := (others => '0');
   
@@ -64,7 +64,7 @@ begin
   p_clk_gen : process is
   begin
 
-    while now < 200 us loop
+    while now < 800 us loop
 
       CLK100MHZ <= '0';
       wait for c_CLK_100MHZ_PERIOD / 2;
@@ -76,5 +76,35 @@ begin
     wait;
 
   end process p_clk_gen;
+  
+  --------------------------------------------------------
+  -- Input generation process
+  --------------------------------------------------------
+  p_input_gen : process is
+  begin
+    
+    wait for 100 us;
+    BTNC <= '0';
+    wait for 5 us;
+    BTNC <= '1';
+    wait for 1 us;
+    BTNC <= '0';
+    wait for 100 us;
+    BTNC <= '1';
+    wait for 1 us;
+    BTNC <= '0';
+    wait for 50 us;
+    BTNC <= '1';
+    wait for 5 us;
+    BTNC <= '0';
+    wait for 300 us;
+    BTNC <= '1';
+    wait for 20 us;
+    BTNC <= '0';
+    wait for 60 us;
+    BTNC <= '1';
+    wait;
+
+  end process p_input_gen;
 
 end architecture testbench;

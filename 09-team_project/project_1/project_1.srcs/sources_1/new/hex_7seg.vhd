@@ -61,8 +61,23 @@ begin
         when "1001" =>
           seg <= "0000100"; -- 9
           
-         when others =>
-          seg <= "0000000";
+        when "1010" =>
+          seg <= "0100100"; -- S
+          
+        when "1011" =>
+          seg <= "1100111"; -- P
+          
+        when "1100" =>
+          seg <= "1110000"; -- t
+          
+        when "1101" =>
+          seg <= "1111010"; -- R
+          
+        when "1110" =>
+          seg <= "0110000"; -- E
+          
+        when others =>
+          seg <= "0111000"; -- F
 
       end case;
 
