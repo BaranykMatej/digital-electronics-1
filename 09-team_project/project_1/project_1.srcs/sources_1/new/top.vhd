@@ -19,9 +19,9 @@ entity top is
     -- reset button
     BTNC        : in std_logic;
     -- switches used to set the counter
-    SW          : in std_logic_vector(15 downto 0);
+    SW          : in std_logic_vector(15 downto 0)
     -- debug timer output
-    debug_timer : out std_logic_vector(11 downto 0) := (others => '0')
+    --debug_timer : out std_logic_vector(11 downto 0) := (others => '0')
   );
 end entity top;
 
@@ -129,12 +129,12 @@ end if;
 
 end process p_counter_sw_to_lim;
 
-p_debug_delete_later : process (CLK100MHZ)
-begin
+--p_debug_delete_later : process (CLK100MHZ)
+--begin
 
-debug_timer <= sig_timer_12bit;
+--debug_timer <= sig_timer_12bit;
 
-end process p_debug_delete_later;
+--end process p_debug_delete_later;
 
 p_state_selector : process (CLK100MHZ)
 begin
