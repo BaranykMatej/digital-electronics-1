@@ -53,7 +53,7 @@ begin
 -- g_MAX EDIT FOR SECONDS!!!
 clk_en1 : entity work.clock_enable
     generic map (
-      g_MAX => 10      
+      g_MAX => 100000000      
     )
     port map (
       -- input clock signal
