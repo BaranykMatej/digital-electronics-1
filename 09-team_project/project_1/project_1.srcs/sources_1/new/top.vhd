@@ -110,21 +110,21 @@ else
 end if;
 
 -- timer limit
-if SW (9 downto 3) > "111100" then
+if SW (9 downto 4) > "111100" then
   sig_timer_limit_from_switches_TEMP <= to_unsigned(3600, 12);
-elsif SW (9 downto 3) < "000001" then
+elsif SW (9 downto 4) < "000001" then
   sig_timer_limit_from_switches_TEMP <= to_unsigned(60, 12);
 else
   sig_timer_limit_from_switches_TEMP <= to_unsigned(to_integer(unsigned(SW (9 downto 3))) * 60, 12);
 end if;
 
 -- pause limit
-if SW (9 downto 3) > "111100" then
+if SW (15 downto 10) > "111100" then
   sig_pause_limit_from_switches_TEMP <= to_unsigned(3600, 12);
-elsif SW (9 downto 3) < "000001" then
+elsif SW (15 downto 10) < "000001" then
   sig_pause_limit_from_switches_TEMP <= to_unsigned(60, 12);
 else
-  sig_pause_limit_from_switches_TEMP <= to_unsigned(to_integer(unsigned(SW (15 downto 9))) * 60, 12);
+  sig_pause_limit_from_switches_TEMP <= to_unsigned(to_integer(unsigned(SW (15 downto 10))) * 60, 12);
 end if;
 
 end process p_counter_sw_to_lim;
