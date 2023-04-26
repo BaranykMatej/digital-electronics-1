@@ -233,21 +233,21 @@ p_drive_7seg : process (CLK100MHZ)
       if sig_state = COUNT_STARTED or sig_state = SETTINGS then
         case iterator is
               -- display seconds
-              when 1 =>
+              when 10000=>
                 an  <= "11111110";
                 sig_hex <= sig_digit_seconds_ones;
-              when 2 =>
+              when 20000 =>
                 an  <= "11111101";
                 sig_hex <= sig_digit_seconds_tens;
               -- display minutes
-              when 3 =>
+              when 30000 =>
                 an  <= "11111011";
                 sig_hex <= sig_digit_minutes_ones;
-              when 4 =>
+              when 40000 =>
                 an  <= "11110111";
                 sig_hex <= sig_digit_minutes_tens;
               -- display 5(S)/C according to state
-              when 5 =>
+              when 50000 =>
                 an  <= "11101111";
                 if sig_state = COUNT_STARTED then
                   -- when timer, display t
@@ -262,14 +262,14 @@ p_drive_7seg : process (CLK100MHZ)
                   sig_hex <= "1010";
                 end if;
               -- keep 6th display blank
-              when 6 =>
+              when 60000 =>
                 an  <= "11111111";
                 sig_hex <= "0000";
               -- display rounds
-              when 7 =>
+              when 70000 =>
                 an  <= "10111111";
                 sig_hex <= sig_digit_round_ones;
-              when 8 =>
+              when 80000 =>
                 an  <= "01111111";
                 sig_hex <= sig_digit_round_tens;
                 iterator := 0;
@@ -280,28 +280,28 @@ p_drive_7seg : process (CLK100MHZ)
       else
         case iterator is
            -- fill display with fs
-           when 1 =>
+           when 10000 =>
              an  <= "11111110";
              sig_hex <= "1111";
-           when 2 =>
+           when 20000 =>
              an  <= "11111101";
              sig_hex <= "1111";
-           when 3 =>
+           when 30000 =>
              an  <= "11111011";
              sig_hex <= "1111";
-           when 4 =>
+           when 40000 =>
              an  <= "11110111";
              sig_hex <= "1111";
-           when 5 =>
+           when 50000 =>
              an  <= "11101111";
              sig_hex <= "1111";
-           when 6 =>
+           when 60000 =>
              an  <= "11011111";
              sig_hex <= "1111";
-           when 7 =>
+           when 70000 =>
              an  <= "10111111";
              sig_hex <= "1111";
-           when 8 =>
+           when 80000 =>
              an  <= "01111111";
              sig_hex <= "1111";
              iterator := 0;
