@@ -1,3 +1,4 @@
+
 library ieee;
   use ieee.std_logic_1164.all;
   use ieee.numeric_std.all;
@@ -14,6 +15,7 @@ entity top is
     CE          : out std_logic;
     CF          : out std_logic;
     CG          : out std_logic;
+    DP          : out std_logic;
     -- segmented display anodes
     AN          : out std_logic_vector (7 downto 0);
     -- reset button
@@ -88,6 +90,7 @@ begin
       -- variable input
       hex      => sig_hex,
       -- cathodes output
+      seg(7)   => DP,
       seg(6)   => CA,
       seg(5)   => CB,
       seg(4)   => CC,
@@ -104,7 +107,7 @@ begin
 
 -- round limit
 if SW(3 downto 0) < "0001" then
-  sig_round_limit_from_switches_TEMP <= "0001";
+  sig_round_limit_from_switches_TEMP <= "0000";
 else
   sig_round_limit_from_switches_TEMP <= unsigned(SW (3 downto 0));
 end if;
@@ -112,16 +115,16 @@ end if;
 -- timer limit
 if SW (9 downto 4) > "111100" then
   sig_timer_limit_from_switches_TEMP <= to_unsigned(3600, 12);
-elsif SW (9 downto 4) < "000001" then
+elsif SW (9 downto 4) < "000000" then
   sig_timer_limit_from_switches_TEMP <= to_unsigned(60, 12);
 else
-  sig_timer_limit_from_switches_TEMP <= to_unsigned(to_integer(unsigned(SW (9 downto 3))) * 60, 12);
+  sig_timer_limit_from_switches_TEMP <= to_unsigned(to_integer(unsigned(SW (9 downto 4))) * 60, 12);
 end if;
 
 -- pause limit
 if SW (15 downto 10) > "111100" then
   sig_pause_limit_from_switches_TEMP <= to_unsigned(3600, 12);
-elsif SW (15 downto 10) < "000001" then
+elsif SW (15 downto 10) < "000000" then
   sig_pause_limit_from_switches_TEMP <= to_unsigned(60, 12);
 else
   sig_pause_limit_from_switches_TEMP <= to_unsigned(to_integer(unsigned(SW (15 downto 10))) * 60, 12);
@@ -253,6 +256,7 @@ p_drive_7seg : process (CLK100MHZ)
                   -- when timer, display t
                   if (sig_timer_12bit > sig_pause_12bit) then
                     sig_hex <= "1100";
+                    
                   -- when pause, display p
                   else
                     sig_hex <= "1011";
