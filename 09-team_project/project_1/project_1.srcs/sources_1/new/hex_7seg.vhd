@@ -9,7 +9,7 @@ entity hex_7seg is
   port (
     blank : in    std_logic;                    --! Display is clear if blank = 1
     hex   : in    std_logic_vector(3 downto 0); --! Binary representation of one hexadecimal symbol
-    seg   : out   std_logic_vector(6 downto 0)  --! Seven active-low segments in the order: a, b, ..., g
+    seg   : out   std_logic_vector(7 downto 0)  --! Seven active-low segments in the order: a, b, ..., g
   );
 end entity hex_7seg;
 
@@ -26,58 +26,58 @@ begin
   begin
 
     if (blank = '1') then
-      seg <= "1111111";     -- Blanking display
+      seg <= "11111111";     -- Blanking display
     else
 
       case hex is
 
         when "0000" =>
-          seg <= "0000001"; -- 0
+          seg <= "10000001"; -- 0
 
         when "0001" =>
-          seg <= "1001111"; -- 1
+          seg <= "11001111"; -- 1
 
         when "0010" =>
-          seg <= "0010010"; -- 2
+          seg <= "10010010"; -- 2
 
         when "0011" =>
-          seg <= "0000110"; -- 3
+          seg <= "10000110"; -- 3
 
         when "0100" =>
-          seg <= "1001100"; -- 4
+          seg <= "11001100"; -- 4
 
         when "0101" =>
-          seg <= "0100100"; -- 5
+          seg <= "10100100"; -- 5
 
         when "0110" =>
-          seg <= "0100000"; -- 6
+          seg <= "10100000"; -- 6
 
         when "0111" =>
-          seg <= "0001111"; -- 7
+          seg <= "10001111"; -- 7
 
         when "1000" =>
-          seg <= "0000000"; -- 8
+          seg <= "10000000"; -- 8
 
         when "1001" =>
-          seg <= "0000100"; -- 9
+          seg <= "10000100"; -- 9
           
         when "1010" =>
-          seg <= "0100100"; -- S
+          seg <= "00100100"; -- S
           
         when "1011" =>
-          seg <= "0011000"; -- P  
+          seg <= "10011000"; -- P  
           
         when "1100" =>
-          seg <= "1110000"; -- t
+          seg <= "11110000"; -- t
           
         when "1101" =>
-          seg <= "1111010"; -- R
+          seg <= "11111010"; -- R
           
         when "1110" =>
-          seg <= "0110000"; -- E
+          seg <= "10110000"; -- E
           
         when others =>
-          seg <= "0111000"; -- F
+          seg <= "10111000"; -- F
 
       end case;
 
