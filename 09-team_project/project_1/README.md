@@ -54,7 +54,7 @@ Photo:
 ![Setting state](images/zaklad.jpg)
 
 Video:
-![Video link YOUTUBE](https://www.youtube.com/watch?v=pLNbUWPhGSs)
+[Video link YOUTUBE](https://www.youtube.com/watch?v=pLNbUWPhGSs)
 
 ## References                                                                            
 
@@ -62,4 +62,4 @@ Video:
 
 2. [Freshkruhac.cz](https://freshkruhac.cz/kruhovy-trenink/)
 
-3. ![Tomas Fryza DE1 git](https://github.com/tomas-fryza/digital-electronics-1)
+3. [Tomas Fryza DE1 git](https://github.com/tomas-fryza/digital-electronics-1)
