@@ -23,7 +23,7 @@ Demonstration using pictures:
 
 ![Pause 1](images/caspauza1.jpg)
 
-![Pause 2](images/caspauza2.jpg)
+![Pause 2](images/caspuaza2.jpg)
 
 ## Software description
 Source: (project_1/project_1.srcs/sources_1/new/top.vhd)
