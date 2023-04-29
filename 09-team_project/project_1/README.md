@@ -58,7 +58,7 @@ Video:
 
 ## References                                                                            
 
-1. [Solution of 07-display-driver as done in school](https://github.com/BaranykMatej/digital-electronics-1/tree/main/07-display_driver/display_driver/display_driver.srcs/sources_1/new - clock_enable.vhd, cnt_up_down.vhd, hex_7seg.vhd)
+1. [Solution of 07-display-driver as done in school - clock_enable.vhd, cnt_up_down.vhd, hex_7seg.vhd](https://github.com/BaranykMatej/digital-electronics-1/tree/main/07-display_driver/display_driver/display_driver.srcs/sources_1/new)
 
 2. [Freshkruhac.cz](https://freshkruhac.cz/kruhovy-trenink/)
 
