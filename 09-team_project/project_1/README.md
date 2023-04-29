@@ -22,21 +22,19 @@ In the 1st picture we can see the state of the board being set on the 1st round 
 Same rules apply here as they did in the previous image, except this time we set the amount of rounds to 14.
 ![2nd round](images/kolo2.jpg)
 
-In the following 3 pictures we can see that the counter changes with accordance to time. 
+
 ![Variable time](images/cas1.jpg)
 
 ![Time pass](images/cas2.jpg)
 
 ![Time pass2](images/cas3.jpg)
 
-In the following 2 pictures you can see the length of the pause change as indicated by the 03 and 11.
 ![Pause 1](images/caspauza1.jpg)
 
 ![Pause 2](images/caspuaza2.jpg)
 
 ## Software description
 Source: (project_1/project_1.srcs/sources_1/new/top.vhd)
-
 TestBench: (project_1/project_1.srcs/sim_1/new/tb_top.vhd)
 
 Put flowchats/state diagrams of your algorithm(s)                                         
@@ -47,7 +45,7 @@ Write descriptive text and simulation screenshots of your components.
 ![Simulation](images/sim.png)
 
 
-IN the picture of simulation we can see how each part of the 7-seg gets lit up. 
+In the picture of simulation we can see how each part of the 7-seg gets lit up. This correlates to the SW settings we've set up in our testbench. 
 
 ## Instructions                                                                           
 
@@ -66,9 +64,6 @@ Photo:
 This is the base state that the board should appear in. Without any limits/rounds set.
 
 Video:
-
-Video fully demonstrating the capabilities of our project. You can see all the numbers change just as well as the letter representing which state the board's in. 
-
 [Video link YOUTUBE](https://www.youtube.com/watch?v=pLNbUWPhGSs)
 
 ## References                                                                            
