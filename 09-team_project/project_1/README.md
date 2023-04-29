@@ -12,9 +12,13 @@ Using switches SW0 - SW3 (maximum 16 rounds), set the number of laps. Switches S
 
 Demonstration using pictures:
 In the 1st picture we can see the state of the board being set on the 1st round as: 020S 0101, this means:
+
 02 - 2 rounds
+
 0S - setup/settings mode
+
 01 - pause length (in minutes)
+
 01 - round length (in minutes)
 
 ![1st round](images/kolo1.jpg)
